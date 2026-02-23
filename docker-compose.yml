@@ -1,0 +1,13 @@
+name: bug
+
+services:
+  something:
+    build:
+      context: .
+    develop:
+      watch:
+        - action: sync
+          path: ./watched-file-sync.txt
+          target: /home/app/watched-file-sync.txt
+        - action: rebuild
+          path: ./watched-file.txt
